@@ -1,0 +1,10 @@
+
+{
+  "name": "Featured Categories Header",
+  "about_url": "https://example.com",
+  "license_url": "https://opensource.org/licenses/MIT",
+  "authors": ["Your Name"],
+  "theme_version": "1.0",
+  "minimum_discourse_version": "2.7.0",
+  "assets": {}
+}

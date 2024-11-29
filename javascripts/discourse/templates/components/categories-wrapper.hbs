@@ -1,0 +1,42 @@
+
+<div class="top-categories-wrapper">
+  {{#each categories as |c|}}
+    <div class="top-category-column-one">
+      {{category-title-link category=c}}
+      {{#if c.description}}
+        <div class="category-description">
+          {{dir-span c.description}}
+        </div>
+      {{/if}}
+      {{#if c.isGrandParent}}
+        <table class="category-list subcategories-with-subcategories">
+          <tbody>
+            {{#each c.subcategories as |subcategory|}}
+              <tr data-category-id={{subcategory.id}} class="{{if subcategory.uploaded_logo.url 'has-logo' 'no-logo'}}">
+                <td class="category" style={{border-color subcategory.color}}>
+                  {{category-title-link tagName="h4" category=subcategory}}
+                  {{#if subcategory.description_excerpt}}
+                    <div class="category-description subcategory-description">
+                      {{{dir-span subcategory.description_excerpt}}}
+                    </div>
+                  {{/if}}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{else if c.subcategories}}
+        <div class="subcategories">
+          {{#each c.subcategories as |subcategory|}}
+            {{#unless subcategory.isMuted}}
+              <span class="subcategory">
+                {{category-title-before category=subcategory}}
+                {{category-link subcategory hideParent="true"}}
+              </span>
+            {{/unless}}
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>
