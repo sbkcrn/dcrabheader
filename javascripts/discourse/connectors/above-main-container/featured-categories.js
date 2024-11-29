@@ -10,7 +10,7 @@ export default apiInitializer("0.8", (api) => {
         if (url === "/" || url === "/latest") {
           document.documentElement.classList.add("custom-featured-categories");
 
-          const definedFeaturedCategories = ["uncategorized", "blog", "two"];
+          const definedFeaturedCategories = ["from the team", "all things rabbit", "lam, teach mode & agents"];
           const featuredCategories = [];
 
           const categories = Category.list();
