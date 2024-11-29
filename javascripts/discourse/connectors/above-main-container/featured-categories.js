@@ -7,7 +7,7 @@ export default apiInitializer("0.8", (api) => {
   api.registerConnectorClass("above-main-container", "featured-categories", {
     setupComponent(args, component) {
       api.onPageChange((url, title) => {
-        if (url === "/" || url === "/latest") {
+        if (url === "/" || url === "/categories") {
           document.documentElement.classList.add("custom-featured-categories");
 
           const definedFeaturedCategories = ["from the team", "all things rabbit", "lam, teach mode & agents"];
